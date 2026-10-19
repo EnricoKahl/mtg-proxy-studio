@@ -1,0 +1,48 @@
+
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Find and publish project
+        shell: pwsh
+        run: |
+          $project = Get-ChildItem -Recurse -Filter MTGProxyStudio.csproj |
+            Where-Object { $_.FullName -notmatch '[\\/](bin|obj)[\\/]' } |
+            Select-Object -First 1
+
+          if (-not $project) {
+            throw "MTGProxyStudio.csproj not found"
+          }
+
+          dotnet publish $project.FullName `
+            --configuration Release `
+            --runtime win-x64 `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            --output publish
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Build failed"
+          }
+
+      - name: Upload application
+        uses: actions/upload-artifact@v4
+        with:
+          name: MTGProxyStudio-Windows-x64
+          path: publish/
