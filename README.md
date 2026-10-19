@@ -100,7 +100,3 @@ When reporting a problem, please include the affected card name, set code, colle
 MTG Proxy Studio is an **unofficial, fan-made project** and is not affiliated with, endorsed by or sponsored by **Wizards of the Coast** or **Scryfall**.
 
 Magic: The Gathering, its names, symbols and artwork belong to their respective rights holders. Card information and images are retrieved from Scryfall at the user's request; they are not distributed with this repository. Users are responsible for complying with applicable copyright rules and third-party terms, including [Scryfall's API guidelines](https://scryfall.com/docs/api) and [Wizards of the Coast's Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy).
-
-## License
-
-**No open-source license has been declared yet.** Until a `LICENSE` file is added, the repository's source code is not automatically licensed for reuse or redistribution. The maintainer can choose a suitable license before inviting outside contributions.
