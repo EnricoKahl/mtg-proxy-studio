@@ -1,0 +1,12 @@
+MTG Proxy Studio v2 - Token-Fix
+
+- Token-Sprache als eigene Einstellung ergänzt
+- englische Scryfall-Tokenverknüpfungen werden als Referenz akzeptiert
+- Suche nach lokalisierter Tokenversion über Oracle-ID und Kartenname
+- zusätzliche Ähnlichkeitsprüfung nach Layout, Typ, Regeltext, Farben und P/T
+- passendes Token-Set der Ursprungskarte wird bevorzugt
+- englischer Fallback, wenn keine Übersetzung existiert
+- Auswahlfenster bei mehreren Tokenmotiven
+- Embleme und doppelseitige Tokens werden unterstützt
+- Token-Manifest als CSV und JSON
+- mehrseitige Scryfall-Suchergebnisse werden vollständig eingelesen
